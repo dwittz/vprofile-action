@@ -79,7 +79,7 @@ jobs:
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             aws-region: ${{env.AWS_REGION}}
         - name: Get KubeConfig File
-          run: aws eks update-kubeconfig --region ${{env.AWS_REGION}} --name $${{env.EKS_CLUSTER}}
+          run: aws eks update-kubeconfig --region ${{env.AWS_REGION}} --name ${{env.EKS_CLUSTER}}
 
         - name: Print Config File
           run: cat ~/.kube/config  
